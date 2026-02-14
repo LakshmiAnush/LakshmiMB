@@ -1,0 +1,701 @@
+/* General Styles */
+body {
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #121212, #1e1e1e);
+    color: white;
+    text-align: center;
+    transition: background 0.5s, color 0.5s;
+}
+
+
+/* Header */
+header {
+    background: #333;
+    color: white;
+    padding: 40px 20px;
+    position: relative;
+    animation: slide-in 1s ease-in-out;
+}
+
+h2 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+
+.highlight-text {
+    color: rgb(245, 245, 245); /* Change to your preferred color */
+}
+
+
+/* Custom Glow Effect */
+.glow {
+    color: #2629f7; /* Change text color */
+    text-shadow: 0 0 10px #338fff, 0 0 20px #348ffe, 0 0 30px #3690fe; /* Change glow colors */
+    font-weight: bold; /* Makes text stand out */
+}
+
+
+@keyframes typing {
+    0% { width: 0; }
+    50% { width: 25ch; } /* Adjust width to fit text */
+    100% { width: 0; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.typing-text {
+    color: rgb(248, 228, 9); /* Text color */
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #333; /* Cursor effect */
+    font-size: 4rem;
+
+}
+
+
+/* Hide cursor after typing completes */
+.typing-text::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    animation: none;
+}
+
+
+/* Navigation */
+nav {
+    background: #222;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+
+}
+
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #00c3ff;
+    text-decoration: underline;
+}
+
+/* Sections */
+section {
+    padding: 40px;
+    margin: 20px;
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    opacity: 1;
+
+}
+.profile-img {
+    width: 150px;  /* Adjust width */
+    height: 150px; /* Adjust height */
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensures the image scales properly */
+    border: 3px solid #fff; /* Optional: adds a border */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional: adds shadow */
+}
+
+
+/* Section Styling */
+#experience {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+
+section h2 {
+    font-size: 2rem;
+    color: #f0f0f0;
+    margin-bottom: 20px;
+}
+
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+}
+
+/* Responsive Grid for Different Screens */
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Card Styles */
+.bg-secondary {
+    background-color:  rgb(204, 230, 246);;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #333;
+}
+
+.bg-secondary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+.p-6 {
+    padding: 20px;
+}
+
+.rounded-lg {
+    border-radius: 10px;
+}
+
+.border {
+    border: 1px solid #ddd;
+}
+
+/* Text Styles */
+.text-xl {
+    font-size: 1.5rem;
+    color: #000
+    ;
+}
+
+.text-secondary-foreground {
+    color: #444;
+}
+
+
+
+/* Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Slide-Up Effect */
+.slide-up {
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.slide-up.visible {
+    transform: translateY(0) !important;
+}
+
+/* Hover Effect */
+.bg-secondary:hover {
+    background-color:  #d3f5b9; /* Lighter solid color */
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+/* Text Styling */
+.text-xl {
+    font-size: 1.5rem;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+/* Ensure Text is Visible in Both Light & Dark Mode */
+.text-primary-foreground {
+    color: #222; /* Darker for light mode */
+}
+
+
+/* Ensure left alignment */
+.text-left {
+    text-align: left !important;
+}
+
+/* If flexbox is used, align items to start */
+.flex-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* If sections are affecting alignment, reset */
+section ul{
+    text-align: left !important;
+}
+
+
+
+
+
+/* Subsection Styling - Match Card Styles */
+.subsection {
+    background-color: rgb(204, 230, 246); /* Same as .bg-secondary */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Hover Effect - Match Card Hover */
+.subsection:hover {
+    background-color: #d3f5b9; /* Same as .bg-secondary:hover */
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Title Styling */
+.subsection-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f0f0f0;
+    margin-bottom: 10px;
+}
+
+
+/* Ensure Text is Visible in Both Light & Dark Mode */
+.text-primary-foreground {
+    color: #222; /* Darker for light mode */
+}
+
+
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: #00c3ff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+
+}
+
+.btn:hover {
+    background: #009acf;
+    transform: scale(1.1);
+}
+
+/* Contact Links */
+a {
+    color: #00c3ff;
+
+}
+
+a:hover {
+    color: #005f99;
+
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+
+}
+
+p svg {
+    vertical-align: middle; /* Aligns with text */
+    margin-right: 5px; /* Adds spacing between icon and text */
+    /*width: 20px; /* Adjust width if needed */
+    height: 20px; /* Adjust height if needed */
+}
+
+
+/* Animations */
+@keyframes slide-in {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* General Styles */
+body {
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #121212, #1e1e1e);
+    color: white;
+    text-align: center;
+    transition: background 0.5s, color 0.5s;
+}
+
+
+/* Header */
+header {
+    background: #333;
+    color: white;
+    padding: 40px 20px;
+    position: relative;
+    animation: slide-in 1s ease-in-out;
+}
+
+h2 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+
+.highlight-text {
+    color: rgb(245, 245, 245); /* Change to your preferred color */
+}
+
+
+/* Custom Glow Effect */
+.glow {
+    color: #2629f7; /* Change text color */
+    text-shadow: 0 0 10px #338fff, 0 0 20px #348ffe, 0 0 30px #3690fe; /* Change glow colors */
+    font-weight: bold; /* Makes text stand out */
+}
+
+
+@keyframes typing {
+    0% { width: 0; }
+    50% { width: 25ch; } /* Adjust width to fit text */
+    100% { width: 0; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.typing-text {
+    color: rgb(248, 228, 9); /* Text color */
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #333; /* Cursor effect */
+    font-size: 4rem;
+
+}
+
+
+/* Hide cursor after typing completes */
+.typing-text::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    animation: none;
+}
+
+
+/* Navigation */
+nav {
+    background: #222;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+
+}
+
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #00c3ff;
+    text-decoration: underline;
+}
+
+/* Sections */
+section {
+    padding: 40px;
+    margin: 20px;
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    opacity: 1;
+
+}
+.profile-img {
+    width: 150px;  /* Adjust width */
+    height: 150px; /* Adjust height */
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensures the image scales properly */
+    border: 3px solid #fff; /* Optional: adds a border */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional: adds shadow */
+}
+
+
+/* Section Styling */
+#experience {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+
+section h2 {
+    font-size: 2rem;
+    color: #f0f0f0;
+    margin-bottom: 20px;
+}
+
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+}
+
+/* Responsive Grid for Different Screens */
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Card Styles */
+.bg-secondary {
+    background-color:  rgb(204, 230, 246);;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #333;
+}
+
+.bg-secondary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+.p-6 {
+    padding: 20px;
+}
+
+.rounded-lg {
+    border-radius: 10px;
+}
+
+.border {
+    border: 1px solid #ddd;
+}
+
+/* Text Styles */
+.text-xl {
+    font-size: 1.5rem;
+    color: #000
+    ;
+}
+
+.text-secondary-foreground {
+    color: #444;
+}
+
+
+
+/* Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Slide-Up Effect */
+.slide-up {
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.slide-up.visible {
+    transform: translateY(0) !important;
+}
+
+/* Hover Effect */
+.bg-secondary:hover {
+    background-color:  #d3f5b9; /* Lighter solid color */
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+/* Text Styling */
+.text-xl {
+    font-size: 1.5rem;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+/* Ensure Text is Visible in Both Light & Dark Mode */
+.text-primary-foreground {
+    color: #222; /* Darker for light mode */
+}
+
+
+/* Ensure left alignment */
+.text-left {
+    text-align: left !important;
+}
+
+/* If flexbox is used, align items to start */
+.flex-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* If sections are affecting alignment, reset */
+section ul{
+    text-align: left !important;
+}
+
+
+
+
+
+/* Subsection Styling - Match Card Styles */
+.subsection {
+    background-color: rgb(204, 230, 246); /* Same as .bg-secondary */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Hover Effect - Match Card Hover */
+.subsection:hover {
+    background-color: #d3f5b9; /* Same as .bg-secondary:hover */
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Title Styling */
+.subsection-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f0f0f0;
+    margin-bottom: 10px;
+}
+
+
+/* Ensure Text is Visible in Both Light & Dark Mode */
+.text-primary-foreground {
+    color: #222; /* Darker for light mode */
+}
+
+
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: #00c3ff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+
+}
+
+.btn:hover {
+    background: #009acf;
+    transform: scale(1.1);
+}
+
+/* Contact Links */
+a {
+    color: #00c3ff;
+
+}
+
+a:hover {
+    color: #005f99;
+
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+
+}
+
+p svg {
+    vertical-align: middle; /* Aligns with text */
+    margin-right: 5px; /* Adds spacing between icon and text */
+    /*width: 20px; /* Adjust width if needed */
+    height: 20px; /* Adjust height if needed */
+}
+
+
+/* Animations */
+@keyframes slide-in {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
